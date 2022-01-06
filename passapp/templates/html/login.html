@@ -1,0 +1,18 @@
+{% extends 'html/base.html' %}
+{% block body_block %}
+<div class ="jumbotron">
+    <h1 class="text-success">please login</h1>
+    <div class="container">
+    <form action="{% url 'passapp:login' %}" method="POST">
+        {% csrf_token %}
+        <label  for="exampleInputEmail1" class="form-label">Username :</label>
+        <input class="form-control" type="text" name="username" placeholder="Enter user name"><br>
+
+        <label for="exampleInputEmail1" class="form-label" >Password :</label>
+        <input class="form-control" type="password" name="password" placeholder="Enter your Password"><br>
+
+        <input class="btn btn-primary" type="submit" name="submit" value="Login">
+    </form>
+        </div>
+</div>
+{% endblock %}
